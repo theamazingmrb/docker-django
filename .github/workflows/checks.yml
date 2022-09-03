@@ -16,8 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          username: ${{ secret.DOCKERHUB_USER}}
-          password: ${{ secret.DOCKERHUB_TOKEN}}
+          username: ${{ secrets.DOCKERHUB_USER}}
+          password: ${{ secrets.DOCKERHUB_TOKEN}}
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
       - name: Link
